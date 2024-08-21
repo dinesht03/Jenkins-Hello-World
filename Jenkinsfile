@@ -3,8 +3,8 @@ properties([pipelineTriggers([githubPush()])])
 pipeline {
     environment {
         // name of the image without tag
-        dockerRepo = "Abdur-Rahman29/Jenkins-Hello-World"
-        dockerCredentials = 'docker_hub'
+        dockerRepo = "dinesht1/Jenkins-Hello-World"
+        dockerCredentials = 'Docker'
         dockerImageVersioned = ""
         dockerImageLatest = ""
     }
@@ -19,8 +19,8 @@ pipeline {
                  $class: 'GitSCM',
                  branches: [[name: 'master']],
                  userRemoteConfigs: [[
-                    url: 'https://www.github.com/Abdur-Rahman29/Jenkins-Hello-World.git',
-                    credentialsId: '',
+                    url: 'https://www.github.com/dinesht03/Jenkins-Hello-World.git',
+                    credentialsId: 'Github',
                  ]]
                 ])
             }
